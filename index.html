@@ -11,12 +11,32 @@
     />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
-     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <link rel="preload" href="fonts/opensans-regular.eot" as="font" />
+    <link rel="preload" href="fonts/opensans-bold.eot" as="font" />
+    <link rel="preload" href="fonts/opensans-semibold.eot" as="font" />
 
     <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+      function loadStyleSheet(src) {
+        if (document.createStyleSheet) document.createStyleSheet(src);
+        else {
+          var stylesheet = document.createElement("link");
+          stylesheet.href = src;
+          stylesheet.rel = "stylesheet";
+          stylesheet.type = "text/css";
+          document.getElementsByTagName("head")[0].appendChild(stylesheet);
+        }
+      }
+
+      window.onload(() => {
+        loadStyleSheet("css/owl.transitions.css");
+        loadStyleSheet("css/owl.carousel.css");
+        loadStyleSheet("css/animate.css");
+      });
+    </script>
 
     <script defer type="text/javascript" src="js/jquery.js"></script>
     <script defer type="text/javascript" src="js/ajaxchimp.js"></script>
